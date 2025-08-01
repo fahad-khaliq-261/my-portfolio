@@ -206,19 +206,26 @@ const timeline = [
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-spin-slow opacity-75" />
-              <div className="absolute inset-2 bg-black rounded-full" />
-              <Image
-                src="/profile.jpg?height=120&width=120"
-                alt="Fahad developer"
-                width={120}
-                height={120}
-                className="absolute inset-2 rounded-full object-cover"
-              />
-            </div>
-          </div>
+        <div className="mb-8">
+  <div className="relative w-48 h-48 mx-auto mb-6">
+    {/* Outer animated border */}
+    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 animate-spin-slow opacity-75 z-0" />
+
+    {/* Inner black background */}
+    <div className="absolute inset-[8px] bg-black rounded-full z-10" /> 
+
+    {/* Profile Image */}
+    <div className="absolute inset-[6px] rounded-full overflow-hidden z-20">
+      <Image
+        src="/profile.jpg"
+        alt="Fahad Developer"
+        width={120}
+        height={110}
+        className="object-cover w-full h-full"
+      />
+    </div>
+  </div>
+</div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
@@ -410,65 +417,84 @@ const timeline = [
 </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 relative z-10">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Let's Build Something Amazing
-              </span>
-            </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              Ready to bring your vision to life? Let's discuss your next project
-            </p>
+<section id="contact" className="py-20 px-6 relative z-10">
+  <div className="container mx-auto max-w-4xl">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          Let's Build Something Amazing
+        </span>
+      </h2>
+      <p className="text-xl text-white/70 max-w-2xl mx-auto">
+        Ready to bring your vision to life? Let's discuss your next project.
+      </p>
+    </div>
+
+    <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg">
+      <CardContent className="p-8">
+        <form
+          action="https://formsubmit.co/fahadkhaliq261@gmail.com"
+          method="POST"
+          className="space-y-6"
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-white/70 mb-2">Name</label>
+              <Input
+                name="name"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-white/70 mb-2">Email</label>
+              <Input
+                type="email"
+                name="email"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
           </div>
 
-          <Card className="bg-white/5 backdrop-blur-md border-white/10">
-            <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-white/70 mb-2">Name</label>
-                    <Input
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-white/70 mb-2">Email</label>
-                    <Input
-                      type="email"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-white/70 mb-2">Project Type</label>
-                  <Input
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-                    placeholder="Web App, Mobile App, AI Integration, etc."
-                  />
-                </div>
-                <div>
-                  <label className="block text-white/70 mb-2">Message</label>
-                  <Textarea
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50 min-h-32"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-                <Button
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
-                >
-                  Send Message
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+          <div>
+            <label className="block text-white/70 mb-2">Project Type</label>
+            <Input
+              name="projectType"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+              placeholder="Web App, Mobile App, AI Integration, etc."
+            />
+          </div>
+
+          <div>
+            <label className="block text-white/70 mb-2">Message</label>
+            <Textarea
+              name="message"
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/50 min-h-32"
+              placeholder="Tell me about your project..."
+              required
+            />
+          </div>
+
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-all duration-300"
+          >
+            Send Message
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/10 relative z-10">
