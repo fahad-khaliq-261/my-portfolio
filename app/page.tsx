@@ -211,8 +211,8 @@ const timeline = [
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-spin-slow opacity-75" />
               <div className="absolute inset-2 bg-black rounded-full" />
               <Image
-                src="/placeholder.svg?height=120&width=120"
-                alt="Alex Developer"
+                src="/profile.jpg?height=120&width=120"
+                alt="Fahad developer"
                 width={120}
                 height={120}
                 className="absolute inset-2 rounded-full object-cover"
@@ -475,7 +475,7 @@ const timeline = [
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4 md:mb-0">
-              Alex.dev
+              Fahad.dev
             </div>
             <div className="flex space-x-6 mb-4 md:mb-0">
               <a href="#" className="text-white/60 hover:text-purple-400 transition-colors">
@@ -491,7 +491,7 @@ const timeline = [
                 <Mail className="w-5 h-5" />
               </a>
             </div>
-            <div className="text-white/50 text-sm">© 2024 Alex.dev. Crafted with passion.</div>
+            <div className="text-white/50 text-sm">© 2025 Fahad.dev. Crafted with passion.</div>
           </div>
         </div>
       </footer>
