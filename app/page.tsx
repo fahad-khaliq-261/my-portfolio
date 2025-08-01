@@ -76,7 +76,7 @@ export default function FreelancerProfile() {
     {
       title: "Picabooo",
       category: "web application",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/picaboo.jpg?height=400&width=600",
       description: "ecomerce book store with the complete backend and frontend with node apis.",
       technologies: ["React", "Express", "Mongodb", "Node.js"],
       link: "#",
@@ -107,33 +107,56 @@ export default function FreelancerProfile() {
     },
   
   ]
-
-  const timeline = [
-    {
-      year: "2024",
-      title: "AI Integration Specialist",
-      description:
-        "Leading the integration of AI technologies in web applications, focusing on machine learning and natural language processing.",
-    },
-    {
-      year: "2023",
-      title: "Senior Full-Stack Developer",
-      description:
-        "Expanded expertise in cloud architecture and microservices, delivering scalable solutions for enterprise clients.",
-    },
-    {
-      year: "2022",
-      title: "Freelance Journey Begins",
-      description:
-        "Started independent consulting, specializing in modern web technologies and user experience design.",
-    },
-    {
-      year: "2021",
-      title: "Tech Lead at StartupX",
-      description:
-        "Led a team of developers in building innovative SaaS products, focusing on performance and scalability.",
-    },
-  ]
+const timeline = [
+  {
+    year: "2024",
+    title: "Started University",
+    description:
+      "Enrolled in University of South Asia to pursue my Bachelor's in Computer Science. Started exploring web and app development.",
+  },
+  {
+    year: "2024 (Second Semester)",
+    title: "Internship at Elevate Business Solutions",
+    description:
+      "Joined as a Django Developer Intern. Worked on backend development, learning how real-world APIs and databases are handled.",
+  },
+  {
+    year: "2024",
+    title: "Built Car Dealership Website",
+    description:
+      "Created a Django-based web application for managing car listings, dealers, and buyer interactions.",
+  },
+  {
+    year: "2024–2025",
+    title: "Sales Analytics App (Flutter)",
+    description:
+      "Started working on a sales analytics app called Vantedge using Flutter. Gained experience in mobile UI design and data visualization.",
+  },
+  {
+    year: "2025",
+    title: "Testify – Internet Speed Tester",
+    description:
+      "Developed a custom Flutter app named Testify that measures internet speed with clean UI and precise metrics.",
+  },
+  {
+    year: "2025",
+    title: "Online Book Store",
+    description:
+      "Created a full-stack book store application with search, filters, and authentication. Integrated secure checkout and admin panel.",
+  },
+  {
+    year: "2025",
+    title: "MERN Stack Projects",
+    description:
+      "Built small projects using the MERN stack to enhance my full-stack development capabilities, including to-do apps and dashboards.",
+  },
+  {
+    year: "2025",
+    title: "Portfolio Website",
+    description:
+      "Started building my personal portfolio site to showcase my experience, projects, and growth as a full-stack developer.",
+  },
+];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -150,7 +173,7 @@ export default function FreelancerProfile() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Alex.dev
+              Muhammad Fahad
             </div>
             <div className="hidden md:flex space-x-8">
               {["hero", "services", "portfolio", "about", "contact"].map((section) => (
@@ -345,44 +368,46 @@ export default function FreelancerProfile() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-6 relative z-10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                My Journey
-              </span>
-            </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto">
-              A timeline of innovation, growth, and technological evolution
-            </p>
+      
+{/* About Section */}
+
+<section id="about" className="py-20 px-6 relative z-10">
+  <div className="container mx-auto max-w-6xl">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          My Journey
+        </span>
+      </h2>
+      <p className="text-xl text-white/70 max-w-2xl mx-auto">
+        A timeline of innovation, growth, and technological evolution
+      </p>
+    </div>
+
+    <div className="relative">
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-purple-500 to-blue-500" />
+
+      {timeline.map((item, index) => (
+        <div
+          key={index}
+          className={`flex items-center mb-12 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+        >
+          <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
+            <Card className="bg-white/5 backdrop-blur-md border-white/10">
+              <CardContent className="p-6">
+                <div className="text-purple-400 font-bold text-lg mb-2">{item.year}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-white/70 leading-relaxed">{item.description}</p>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-purple-500 to-blue-500" />
-
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className={`flex items-center mb-12 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-              >
-                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                  <Card className="bg-white/5 backdrop-blur-md border-white/10">
-                    <CardContent className="p-6">
-                      <div className="text-purple-400 font-bold text-lg mb-2">{item.year}</div>
-                      <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                      <p className="text-white/70 leading-relaxed">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-4 border-black" />
-              </div>
-            ))}
-          </div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full border-4 border-black" />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 relative z-10">
